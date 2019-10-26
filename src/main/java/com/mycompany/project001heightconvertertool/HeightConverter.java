@@ -63,11 +63,21 @@ public class HeightConverter extends javax.swing.JFrame {
         clearJButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         clearJButton.setForeground(new java.awt.Color(255, 255, 255));
         clearJButton.setText("Clear");
+        clearJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearJButtonActionPerformed(evt);
+            }
+        });
 
         exitJButton.setBackground(new java.awt.Color(204, 0, 0));
         exitJButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         exitJButton.setForeground(new java.awt.Color(255, 255, 255));
         exitJButton.setText("Exit");
+        exitJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitJButtonActionPerformed(evt);
+            }
+        });
 
         cmJLabel.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         cmJLabel.setText("Centimetres");
@@ -144,6 +154,16 @@ public class HeightConverter extends javax.swing.JFrame {
     private void inchesJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inchesJTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inchesJTextFieldActionPerformed
+
+    private void exitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitJButtonActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitJButtonActionPerformed
+
+    private void clearJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearJButtonActionPerformed
+        feetJTextField.setText("");
+        inchesJTextField.setText("");
+        cmJTextField.setText("");
+    }//GEN-LAST:event_clearJButtonActionPerformed
 
     /**
      * @param args the command line arguments
