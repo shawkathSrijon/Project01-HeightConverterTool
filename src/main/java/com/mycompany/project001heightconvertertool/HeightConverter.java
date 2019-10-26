@@ -58,6 +58,11 @@ public class HeightConverter extends javax.swing.JFrame {
         convertJButton.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         convertJButton.setForeground(new java.awt.Color(255, 255, 255));
         convertJButton.setText("Convert To");
+        convertJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                convertJButtonActionPerformed(evt);
+            }
+        });
 
         clearJButton.setBackground(new java.awt.Color(255, 204, 0));
         clearJButton.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -164,6 +169,17 @@ public class HeightConverter extends javax.swing.JFrame {
         inchesJTextField.setText("");
         cmJTextField.setText("");
     }//GEN-LAST:event_clearJButtonActionPerformed
+
+    private void convertJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_convertJButtonActionPerformed
+        double feet, inches, centimetres;
+        
+        feet = Double.parseDouble(feetJTextField.getText());
+        inches = Double.parseDouble(inchesJTextField.getText());
+        
+        centimetres = (feet * 12 + inches) * 2.54;
+        
+        cmJTextField.setText(String.valueOf(centimetres));
+    }//GEN-LAST:event_convertJButtonActionPerformed
 
     /**
      * @param args the command line arguments
